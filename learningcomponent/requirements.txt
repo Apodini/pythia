@@ -1,0 +1,7 @@
+pymongo
+pandas
+fastapi
+sklearn
+pydotplus
+cassandra-driver
+graphviz

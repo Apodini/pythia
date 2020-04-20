@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: user-simulation
+  labels:
+    name: user-simulation
+  namespace: user-simulation
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: user-simulation
+    spec:
+      containers:
+      - name: user-simulation
+        image: eu.gcr.io/bachelor-lena/user-simulation:latest
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do locust --host http://istio-ingressgateway.istio-system.svc.cluster.local -f /config/locustfile.py --clients 50 --hatch-rate 5 --no-web; done"]
+

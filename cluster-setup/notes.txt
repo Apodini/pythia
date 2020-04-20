@@ -1,0 +1,12 @@
+presentation: 
+    - an BA angelehnt
+    - Use Cases Diagram -> EIST
+    - System Design (Subsystem Decomposition, keine konkreten Frameworks sondern Funktionalitäten beschreiben (fürs tracing benutzne wir jaeger etc))
+    - Object Design (was beinhalten Traces, Payload, ...)
+    - Case Study ()
+
+BA:
+    - Spannungsmaus: Motivation spezifisch (+ K8s) -> Related Work/ Requirements sehr allgemein!!! (Funktionalitäten) -> System Object Design Spezifischer, Folgende Komponenten für Funktionalitäten, technischer
+    - Related Work: auch auf open-source 
+    - System Design: beschreibe Ziel/Funktionalität -> deshalb benutze ich Frameworks
+    - Object Design: technisches Problem bei Traces aufgetreten

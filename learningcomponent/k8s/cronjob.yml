@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: prediction-mechanism-creator
+  namespace: autoscaler
+spec:
+  schedule: "0 0 */2 * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: prediction-mechanism-creator
+            image: eu.gcr.io/deployment-strategies/prediction-mechanism-creator:latest
+            env:
+              - name: CASSANDRA_URL
+                value: "cassandra-svc.cassandra.svc.cluster.local"
+          restartPolicy: OnFailure

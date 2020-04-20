@@ -1,0 +1,5 @@
+pandas
+sklearn
+cassandra-driver
+numpy
+pyaml

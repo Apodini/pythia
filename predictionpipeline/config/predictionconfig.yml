@@ -1,0 +1,9 @@
+interval: 30
+
+single_namespace: True
+namespace: sock-shop
+
+scale_all_services: True
+
+# one instance can handle 2000 requests per minute
+single_threshold: 1000

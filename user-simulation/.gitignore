@@ -1,0 +1,7 @@
+env
+__pycache__
+.cassandra*
+.vscode
+*.json
+*.log
+*.csv

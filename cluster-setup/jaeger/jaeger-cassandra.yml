@@ -1,0 +1,20 @@
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: jaeger-cassandra
+  namespace: observability
+spec:
+  ingress:
+      enabled: false
+  strategy: allInOne
+  storage:
+    type: cassandra
+    options:
+      cassandra:
+        # servers: cluster1-dc1-service.cass-operator.svc
+        servers: cassandra-stateful-svc.cassandra.svc
+        keyspace: jaeger_v1_datacenter3
+    cassandraCreateSchema:
+      datacenter: "datacenter3"
+      mode: "test"
+      timeout: "3m"

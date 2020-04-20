@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prediction-maker
+  namespace: autoscaler
+spec:
+  selector:
+    matchLabels:
+      app: prediction-maker
+  template:
+    metadata:
+      labels:
+        app: prediction-maker
+    spec:
+      containers:
+      - name: prediction-maker
+        image: eu.gcr.io/deployment-strategies/prediction-maker:latest
+        env:
+          - name: CASSANDRA_URL
+            value: 'cassandra-svc.cassandra.svc.cluster.local'
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
